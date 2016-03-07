@@ -2,9 +2,9 @@
 permalink:           pretty
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title:               Steve Sebastian
+tagline:             Vision Scientist
+url:                 http://stephensebastian.com
 paginate:            1
 baseurl:             ""
 
@@ -22,11 +22,14 @@ author:
   email:             markdotto@gmail.com
 
 # Custom vars
-version:             2.0.0
+version:             0.0.1
 github:
-  repo:              https://github.com/poole/poole
+  repo:              https://github.com/stevesebastian/stevesebastian.github.io
 
 # Gems
 gems:
   - jekyll-paginate
   - jekyll-gist
+
+# List of pages to include in the header
+pages_list:       {'About':'/about','Archive':'/archive','Feed':'/atom.xml'}
