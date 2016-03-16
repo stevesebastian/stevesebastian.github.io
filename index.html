@@ -3,31 +3,35 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <article class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+{% include intro.html %}
 
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+<section class="post-list">
+  <div class="container">
 
-    {{ post.content }}
-  </article>
-  {% endfor %}
-</div>
+    <h2>Items...</h2>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+    {% for post in paginator.posts %}
+      <article class="post-item">
+        <p>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            —
+            <strong>
+                <a class="post-link" href="{{ post.url | prepend: site.github.url }}">{{ post.title }}</a>
+            </strong>
+            <span>
+                {% for tag in post.tags %}
+                <a class="tag" href="{{ site.github.url }}/tags#{{ tag | slugify }}">{{ tag }}</a>
+                {% endfor %}
+            </span>
+            —
+            <span> {{ post.content | strip_html | truncatewords: 40 }}</span>
+            <a class="post-link readmore" href="{{ post.url | prepend: site.github.url }}">Read more</a>
+        </p>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="container">
+    {% include pagination.html %}
+  </div>
+</section>

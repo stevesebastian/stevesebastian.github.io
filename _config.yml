@@ -1,35 +1,47 @@
-# Permalinks
-permalink:           pretty
 
-# Setup
-title:               Steve Sebastian
-tagline:             
-url:                 http://stephensebastian.com
-paginate:            1
-baseurl:             ""
+# SEO settings
+title: Steve Sebastian - Vision Scientist
+stylished_title: Steve Sebastian
+description: "Writings on my projects."
+keywords: "coding, machine learning, computer vision, neuroscience, psychology, vision, eye"
+url: http://stephensebastian.com
+baseurl: ""
 
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
+google_analytics: 
+disqus_shortname: ""
+
+# Build settings
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : rouge
+
+paginate: 3
+paginate_path: "/page/:num/"
+comments: true
+
+#source: source
+destination: _site
+
+# Sass configuration
 sass:
-  sass_dir:          _sass
-  style:            :compressed
+  sass_dir: assets/scss
+  style: compressed # expanded
 
-# About/contact
+# Author settings
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name     : Steve Sebastian
+  thumb    : https://en.gravatar.com/userimage/42626876/ff31b74f207c61cc9d2d1d9196fd0080.jpg?size=120
+  email    : sebastian@utexas.edu
+  url      : http://stephensebastian.com
+  github   : http://github.com/stevesebastian
+  linkedin : hhttps://www.linkedin.com/in/stephen-sebastian-701600a3
+project:
+    repo: https://github.com/codinfox/TIL
+    name: TIL
+    author: codinfox
 
-# Custom vars
-version:             0.0.1
-github:
-  repo:              https://github.com/stevesebastian/stevesebastian.github.io
-
-# Gems
 gems:
+  #- bourbon
   - jekyll-paginate
-  - jekyll-gist
 
-# List of pages to include in the header
-pages_list:       {'About':'/about','Archive':'/archive'}
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
