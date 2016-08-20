@@ -254,3 +254,9 @@ hr {
     color: darken($medium-gray-color, 10%);
   }
 }
+
+.centerImage {
+  text-align:center;
+  display:block;
+  margin:auto;
+}
